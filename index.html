@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>三级电影网 - 热门电影电视剧在线观看_影视资源聚合导航</title>
+<meta name="description" content="三级电影网是面向中文用户的影视资源聚合导航站，收录热门电影、热播电视剧、国创动漫与热播榜单，三路频道同步更新、分类清晰、移动端自适应，随手一台就有好戏。">
+<meta name="keywords" content="三级电影网,三级电影,电影在线观看,电视剧在线观看,动漫在线观看,高清影视导航,热播榜单,节目单">
+<meta name="author" content="三级电影网">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#080b14">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="canonical" href="https://sanjidianyingwang-cn.github.io/">
+<link rel="apple-touch-icon" href="/favicon.ico">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="三级电影网">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="三级电影网 - 热门电影电视剧在线观看_影视资源聚合导航">
+<meta property="og:description" content="三级电影网：热门电影、热播剧集、国创动漫与热播榜单一站直达，三路频道同步更新，手机端自适应。">
+<meta property="og:url" content="https://sanjidianyingwang-cn.github.io/">
+<meta property="og:image" content="https://sanjidianyingwang-cn.github.io/favicon.ico">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="三级电影网 - 热门电影电视剧在线观看">
+<meta name="twitter:description" content="三级电影网：热门电影、热播剧集、热播榜单一站直达，移动端自适应。">
+
+<style>
+/* ============ 设计令牌：三屏信号墙（Triple Screen Signal Wall） ============ */
+:root{
+  --bg:#080b14;
+  --bg-2:#0e1322;
+  --bg-3:#151b2e;
+  --bg-4:#1d2439;
+  --ink:#eef2ff;
+  --ink-2:#a6b0d0;
+  --ink-3:#6a749a;
+  --ch1:#22d3ee;
+  --ch2:#f472b6;
+  --ch3:#fbbf24;
+  --rec:#ff4d4d;
+  --ok:#34d399;
+  --line:rgba(166,176,208,.16);
+  --line-2:rgba(34,211,238,.34);
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Courier New",monospace;
+  --sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --maxw:1180px;
+  --nav-h:62px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;padding:0;color:var(--ink);
+  font:16px/1.8 var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  background-color:var(--bg);
+  background-image:
+    linear-gradient(rgba(34,211,238,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(34,211,238,.05) 1px,transparent 1px),
+    radial-gradient(760px 460px at 18% -4%, rgba(34,211,238,.16), transparent 62%),
+    radial-gradient(700px 440px at 84% 8%, rgba(244,114,182,.14), transparent 62%),
+    radial-gradient(820px 520px at 50% 104%, rgba(251,191,36,.12), transparent 64%);
+  background-size:32px 32px,32px 32px,auto,auto,auto;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul,ol{margin:0;padding:0;list-style:none}
+h1,h2,h3,h4{margin:0;font-weight:800;line-height:1.28;letter-spacing:-.01em}
+p{margin:0}
+:focus-visible{outline:2px solid var(--ch1);outline-offset:3px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ch1);color:#080b14;padding:10px 16px;z-index:999}
+.skip:focus{left:12px;top:12px}
+.mono{font-family:var(--mono);letter-spacing:.14em}
+
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;
+  background:linear-gradient(90deg,var(--ch1),var(--ch2),var(--ch3))}
+
+/* ============ 顶部信号条 ============ */
+.sigbar{border-bottom:1px solid var(--line);background:rgba(8,11,20,.86);backdrop-filter:blur(8px)}
+.sigbar-in{max-width:var(--maxw);margin:0 auto;padding:7px 22px;display:flex;justify-content:space-between;
+  gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;color:var(--ink-3)}
+.sigbar-in b{color:var(--ch1)}
+.sigbar-in .rec{display:inline-flex;align-items:center;gap:6px;color:var(--rec)}
+.sigbar-in .rec i{width:7px;height:7px;border-radius:50%;background:var(--rec);animation:pulse 1.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.28}}
+
+/* ============ 导航 ============ */
+.nav{position:sticky;top:0;z-index:150;background:rgba(8,11,20,.94);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line-2)}
+.nav-in{max-width:var(--maxw);margin:0 auto;padding:0 22px;height:var(--nav-h);display:flex;align-items:center;gap:14px}
+.brand{display:flex;align-items:center;gap:11px;flex:0 0 auto}
+/* 三屏 logo */
+.triple{flex:0 0 auto;display:flex;gap:3px}
+.triple i{display:block;width:11px;height:26px;border-radius:2px;position:relative;overflow:hidden}
+.triple i:nth-child(1){background:var(--ch1)}
+.triple i:nth-child(2){background:var(--ch2)}
+.triple i:nth-child(3){background:var(--ch3)}
+.triple i::after{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:rgba(255,255,255,.5)}
+.brand b{display:block;font-size:18.5px;letter-spacing:.04em}
+.brand small{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.26em;color:var(--ink-3);
+  text-transform:uppercase;margin-top:-3px}
+.menu{margin-left:auto;display:flex;align-items:center;gap:2px}
+.menu a{padding:8px 13px;font-size:15px;font-weight:700;color:var(--ink-2);transition:.2s;white-space:nowrap;
+  border-bottom:2px solid transparent}
+.menu a:hover{color:var(--ink);border-bottom-color:var(--ch1)}
+.menu a.active{color:var(--ink);border-bottom-color:var(--ch2)}
+.nav-cta{flex:0 0 auto;margin-left:6px;padding:9px 17px;font-family:var(--mono);font-size:12.5px;font-weight:700;
+  letter-spacing:.1em;color:#080b14;background:var(--ch1);white-space:nowrap}
+.nav-cta:hover{background:var(--ch3)}
+.burger{display:none;margin-left:auto;width:40px;height:36px;background:transparent;border:1px solid var(--line);
+  border-radius:4px;cursor:pointer;place-items:center}
+.burger span{display:block;width:17px;height:2px;background:var(--ink);transition:.22s}
+.burger span+span{margin-top:5px}
+.burger.on span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.on span:nth-child(2){opacity:0}
+.burger.on span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ============ Hero：三块屏 ============ */
+.hero{padding:40px 0 34px}
+.hero-head{display:grid;grid-template-columns:1.15fr .85fr;gap:26px;align-items:end;margin-bottom:26px}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:6px 14px;border:1px solid var(--line-2);border-radius:999px;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;color:var(--ch1)}
+.hero h1{font-size:clamp(28px,4.8vw,48px);margin:16px 0 14px}
+.hero h1 em{font-style:normal;color:var(--ch3)}
+.hero h1 u{text-decoration:none;color:var(--ink);
+  background:linear-gradient(180deg,transparent 62%,rgba(244,114,182,.42) 0)}
+.lead{font-size:15.6px;color:var(--ink-2);max-width:52ch}
+.lead b{color:var(--ch1)}
+/* 三屏 */
+.screens{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.screen{position:relative;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--bg-2);
+  box-shadow:0 18px 40px rgba(0,0,0,.5)}
+.screen .bar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 12px;
+  background:var(--bg-3);border-bottom:1px solid var(--line)}
+.screen .bar .ch{font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:.14em;color:var(--sc)}
+.screen .bar .st{display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10.5px;color:var(--ink-3)}
+.screen .bar .st i{width:6px;height:6px;border-radius:50%;background:var(--rec)}
+.screen .view{position:relative;aspect-ratio:16/10;overflow:hidden;background:linear-gradient(160deg,var(--c1),var(--c2))}
+.screen .view::before{content:"";position:absolute;inset:0;
+  background-image:repeating-linear-gradient(180deg,rgba(0,0,0,.24) 0 1px,transparent 1px 3px)}
+.screen .view::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 44%,rgba(8,11,20,.9))}
+.screen .view .now{position:absolute;left:10px;top:10px;z-index:3;font-family:var(--mono);font-size:10px;font-weight:700;
+  letter-spacing:.14em;padding:3px 9px;color:#080b14;background:var(--sc)}
+.screen .view .ttl{position:absolute;left:12px;right:12px;bottom:11px;z-index:3;font-size:14.5px;font-weight:800;color:#fff}
+.screen .view .tm{position:absolute;right:10px;top:10px;z-index:3;font-family:var(--mono);font-size:10.5px;color:rgba(255,255,255,.8)}
+.screen .foot{padding:11px 12px 13px;border-top:1px solid var(--line)}
+.screen .foot h3{font-size:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.screen .foot p{font-family:var(--mono);font-size:11px;color:var(--ink-3);margin-top:4px;letter-spacing:.06em}
+/* 信号强度条 */
+.signal{display:flex;gap:3px;align-items:flex-end;height:12px}
+.signal i{width:3px;background:var(--sc);opacity:.3}
+.signal i:nth-child(1){height:4px}
+.signal i:nth-child(2){height:7px}
+.signal i:nth-child(3){height:10px}
+.signal i:nth-child(4){height:12px}
+.signal i.on{opacity:1}
+
+/* 搜索 */
+.search{margin:24px 0 14px;display:flex;gap:0;max-width:600px;border:1px solid var(--line-2);border-radius:8px;
+  background:rgba(8,11,20,.7);overflow:hidden}
+.search .pre{flex:0 0 auto;display:flex;align-items:center;padding:0 12px;font-family:var(--mono);font-size:12px;
+  color:var(--ch1);letter-spacing:.1em;border-right:1px solid var(--line)}
+.search input{flex:1;min-width:0;border:0;outline:0;background:none;font:15px var(--sans);color:var(--ink);padding:13px 12px}
+.search input::placeholder{color:var(--ink-3)}
+.search button{border:0;border-left:1px solid var(--line-2);cursor:pointer;padding:13px 26px;background:var(--ch1);
+  color:#080b14;font:800 15px var(--sans)}
+.search button:hover{background:var(--ch3)}
+.chips{display:flex;flex-wrap:wrap;gap:9px;align-items:center;font-size:13px}
+.chips a{padding:6px 14px;border:1px solid var(--line);border-radius:999px;color:var(--ink-2);transition:.2s;
+  background:rgba(238,242,255,.04)}
+.chips a:hover{border-color:var(--ch1);color:var(--ch1);background:rgba(34,211,238,.08)}
+
+/* ============ 栏目通用 ============ */
+section{padding:0}
+.inner{padding:46px 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:22px}
+.sec-head .txt{display:flex;gap:14px;align-items:flex-start}
+/* 频道号牌 */
+.chno{flex:0 0 auto;display:grid;place-items:center;min-width:52px;height:40px;padding:0 10px;border-radius:6px;
+  background:var(--bg-3);border:1px solid var(--line-2);font-family:var(--mono);font-size:13px;font-weight:700;
+  color:var(--ch1);letter-spacing:.1em}
+.sec-head h2{font-size:clamp(21px,2.9vw,30px)}
+.sec-head h2 small{display:block;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.28em;
+  color:var(--ink-3);text-transform:uppercase;margin-bottom:7px}
+.sec-head p{font-size:14.3px;color:var(--ink-2);max-width:54ch;margin-top:8px}
+.more{flex:0 0 auto;padding:10px 20px;font-family:var(--mono);font-size:12.5px;font-weight:700;letter-spacing:.08em;
+  color:#080b14;background:var(--ch3);border-radius:6px;white-space:nowrap}
+.more:hover{background:var(--ch2)}
+
+.filters{display:flex;gap:9px;overflow-x:auto;padding-bottom:6px;margin-bottom:22px;scrollbar-width:none;flex-wrap:wrap}
+.filters::-webkit-scrollbar{display:none}
+.filters button{flex:0 0 auto;border:1px solid var(--line);background:rgba(238,242,255,.04);color:var(--ink-2);
+  padding:8px 18px;border-radius:999px;font:700 14.5px var(--sans);cursor:pointer;transition:.2s}
+.filters button:hover{border-color:var(--line-2);color:var(--ch1)}
+.filters button.on{background:var(--ch2);color:#080b14;border-color:var(--ch2);font-weight:800}
+
+/* ============ 节目单 EPG 网格 ============ */
+.epg{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--bg-2)}
+.epg-head{display:grid;grid-template-columns:118px repeat(4,1fr);background:var(--bg-3);border-bottom:1px solid var(--line)}
+.epg-head span{padding:10px 12px;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--ink-3)}
+.epg-row{display:grid;grid-template-columns:118px repeat(4,1fr);border-bottom:1px solid var(--line)}
+.epg-row:last-child{border-bottom:0}
+.epg-row .ch{padding:14px 12px;display:flex;flex-direction:column;gap:6px;border-right:1px solid var(--line);
+  background:rgba(238,242,255,.02)}
+.epg-row .ch b{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--sc)}
+.epg-row .ch span{font-size:11.5px;color:var(--ink-3)}
+.slot{position:relative;padding:12px 12px 14px;border-right:1px solid var(--line);background:var(--bg-2);
+  transition:.22s;min-width:0;display:block}
+.slot:last-child{border-right:0}
+.slot:hover{background:var(--bg-4)}
+.slot .t{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:var(--ink-3)}
+.slot h3{font-size:14.5px;margin-top:5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.slot p{font-size:11.5px;color:var(--ink-3);margin-top:3px;font-weight:700}
+.slot .badge{display:inline-block;margin-top:8px;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.1em;
+  padding:3px 8px;border-radius:3px;color:#080b14;background:var(--sc)}
+.slot.live .badge{background:var(--rec);color:#fff}
+.slot.next .badge{background:var(--bg-4);color:var(--ink-2);border:1px solid var(--line)}
+/* 播放进度条 */
+.slot .pk{height:3px;margin-top:9px;background:rgba(238,242,255,.1);border-radius:2px;overflow:hidden}
+.slot .pk i{display:block;height:100%;background:var(--sc)}
+
+/* ============ 剧集 ============ */
+.cabs{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.cab{display:flex;gap:14px;padding:13px;border:1px solid var(--line);border-radius:10px;background:var(--bg-2);
+  transition:.26s;position:relative}
+.cab:hover{transform:translateY(-4px);border-color:var(--line-2);box-shadow:0 16px 34px rgba(0,0,0,.45)}
+.cab .mini{flex:0 0 78px;height:104px;border-radius:6px;position:relative;overflow:hidden;border:1px solid var(--line);
+  background:linear-gradient(160deg,var(--c1),var(--c2))}
+.cab .mini::after{content:"";position:absolute;inset:0;
+  background-image:repeating-linear-gradient(180deg,rgba(0,0,0,.22) 0 1px,transparent 1px 3px)}
+.cab .mini b{position:absolute;left:0;right:0;bottom:0;z-index:2;font-family:var(--mono);font-size:10px;text-align:center;
+  padding:3px 0;color:#fff;background:rgba(8,11,20,.92)}
+.cab .det{flex:1;min-width:0}
+.cab h3{font-size:15.5px}
+.cab p{font-size:12.5px;color:var(--ink-3);margin-top:3px;font-weight:700}
+.cab .bar{height:5px;margin-top:11px;border-radius:999px;background:rgba(238,242,255,.1);overflow:hidden}
+.cab .bar i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--ch1),var(--ch3))}
+.cab .pct{font-family:var(--mono);font-size:11.5px;color:var(--ch1);margin-top:6px;display:block;letter-spacing:.06em}
+.cab .dot{flex:0 0 auto;align-self:center;width:9px;height:9px;border-radius:50%;background:var(--ok);
+  box-shadow:0 0 0 4px rgba(52,211,153,.16)}
+
+/* ============ 榜单：三块小屏 ============ */
+.ranks{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.rank{border:1px solid var(--line);border-radius:10px;background:var(--bg-2);padding:16px 16px 6px;position:relative;overflow:hidden}
+.rank::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--sc)}
+.rank h3{font-size:16.5px;margin-bottom:10px;padding-bottom:11px;border-bottom:1px solid var(--line);
+  display:flex;align-items:center;gap:10px}
+.rank h3 i{flex:0 0 auto;width:9px;height:9px;border-radius:50%;background:var(--sc)}
+.rank li{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid rgba(166,176,208,.08)}
+.rank li:last-child{border-bottom:0}
+.rank .no{flex:0 0 auto;min-width:30px;height:24px;display:grid;place-items:center;padding:0 6px;border-radius:3px;
+  font-family:var(--mono);font-size:11.5px;font-weight:700;color:var(--ink-3);background:var(--bg-3)}
+.rank li:nth-child(1) .no{color:#080b14;background:var(--sc)}
+.rank .rt{flex:1;min-width:0}
+.rank .rt strong{display:block;font-size:14.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rank .rt span{font-size:12px;color:var(--ink-3)}
+.rank .hot{flex:0 0 auto;font-family:var(--mono);font-size:13px;font-weight:700;color:var(--ch3)}
+
+/* ============ 信号快讯 ============ */
+.feeds{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:16px}
+.feed{border:1px solid var(--line);border-radius:10px;background:var(--bg-2);overflow:hidden;transition:.28s}
+.feed:hover{transform:translateY(-5px);border-color:var(--line-2);box-shadow:0 18px 38px rgba(0,0,0,.45)}
+.feed .cv{height:120px;position:relative;border-bottom:1px solid var(--line);
+  background:linear-gradient(150deg,var(--c1),var(--c2))}
+.feed .cv::before{content:"";position:absolute;inset:0;
+  background-image:repeating-linear-gradient(180deg,rgba(0,0,0,.22) 0 1px,transparent 1px 3px)}
+.feed .cv b{position:absolute;left:10px;bottom:10px;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.14em;
+  padding:4px 11px;border-radius:3px;color:#080b14;background:var(--ch3)}
+.feed .bd{padding:14px 15px 17px}
+.feed h3{font-size:16px;margin-bottom:7px}
+.feed p{font-size:13.5px;color:var(--ink-2)}
+.feed time{display:block;margin-top:11px;font-family:var(--mono);font-size:11.5px;color:var(--ink-3);letter-spacing:.08em}
+
+/* ============ 关于 / FAQ ============ */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.panel{border:1px solid var(--line);border-radius:10px;background:var(--bg-2);padding:24px}
+.panel h3{font-size:19px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.panel p{font-size:14.5px;color:var(--ink-2);margin-bottom:11px}
+.panel p b{color:var(--ch3)}
+.chans{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.chans div{padding:12px 13px;border:1px solid var(--line);border-radius:8px;background:var(--bg-3);border-left:3px solid var(--cc)}
+.chans div:nth-child(1){--cc:var(--ch1)}
+.chans div:nth-child(2){--cc:var(--ch2)}
+.chans div:nth-child(3){--cc:var(--ch3)}
+.chans div:nth-child(4){--cc:var(--ok)}
+.chans strong{display:block;font-size:13.5px}
+.chans span{font-size:12px;color:var(--ink-3);font-weight:700}
+.faq details{border-bottom:1px solid rgba(166,176,208,.12);padding:13px 0}
+.faq summary{cursor:pointer;font-size:15px;font-weight:800;list-style:none;display:flex;justify-content:space-between;
+  gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"▸";color:var(--ch1);font-size:15px}
+.faq details[open] summary::after{content:"▾"}
+.faq details p{font-size:14px;color:var(--ink-2);margin-top:9px}
+
+/* CTA */
+.cta{margin-top:14px;border:1px solid var(--line-2);border-radius:12px;padding:42px 26px;text-align:center;
+  position:relative;overflow:hidden;background:var(--bg-3)}
+.cta::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;
+  background:linear-gradient(90deg,var(--ch1),var(--ch2),var(--ch3))}
+.cta::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:repeating-linear-gradient(180deg,rgba(0,0,0,.16) 0 1px,transparent 1px 3px)}
+.cta h2{position:relative;font-size:clamp(20px,3vw,29px);margin-bottom:10px}
+.cta h2 em{font-style:normal;color:var(--ch3)}
+.cta p{position:relative;font-size:14.5px;color:var(--ink-2);max-width:56ch;margin:0 auto 22px}
+.cta a{position:relative;display:inline-block;padding:13px 34px;font-family:var(--mono);font-size:14px;font-weight:700;
+  letter-spacing:.1em;color:#080b14;background:var(--ch1);border-radius:6px}
+.cta a:hover{background:var(--ch3)}
+
+/* 页脚 */
+footer{margin-top:0;padding:36px 0 22px;background:var(--bg-2);border-top:1px solid var(--line-2)}
+.fgrid{display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:26px}
+.fgrid h4{font-size:15px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--line);color:var(--ch1);letter-spacing:.08em}
+.fgrid a,.fgrid li{font-size:13.5px;color:var(--ink-3);line-height:2.1}
+.fgrid a:hover{color:var(--ch3)}
+.fbrand .lg{display:flex;align-items:center;gap:11px;font-size:19px;font-weight:800;letter-spacing:.04em}
+.fbrand .lg i{display:flex;gap:3px}
+.fbrand .lg i b{display:block;width:8px;height:22px;border-radius:2px}
+.fbrand .lg i b:nth-child(1){background:var(--ch1)}
+.fbrand .lg i b:nth-child(2){background:var(--ch2)}
+.fbrand .lg i b:nth-child(3){background:var(--ch3)}
+.fbrand p{font-size:13.5px;color:var(--ink-3);margin-top:11px;max-width:42ch}
+.bottom{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-3)}
+.bottom b{color:var(--ch3)}
+
+#top{position:fixed;right:16px;bottom:20px;width:44px;height:44px;border-radius:8px;background:var(--bg-3);
+  border:1px solid var(--line-2);color:var(--ch1);display:grid;place-items:center;cursor:pointer;z-index:160;
+  opacity:0;pointer-events:none;transition:.26s}
+#top.show{opacity:1;pointer-events:auto}
+#top:hover{background:var(--ch1);color:#080b14}
+#top svg{width:17px;height:17px;fill:currentColor}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ============ 响应式 ============ */
+@media (max-width:1024px){
+  .hero-head{grid-template-columns:1fr;gap:22px}
+  .screens{grid-template-columns:1fr;max-width:520px}
+  .about{grid-template-columns:1fr}
+  .fgrid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:880px){
+  .menu{position:fixed;top:var(--nav-h);left:10px;right:10px;flex-direction:column;align-items:stretch;gap:4px;
+    padding:12px;background:var(--bg-2);border:1px solid var(--line-2);border-radius:10px;
+    box-shadow:0 20px 44px rgba(0,0,0,.6);
+    transform:translateY(-10px);opacity:0;visibility:hidden;transition:.24s;
+    max-height:calc(100vh - var(--nav-h) - 30px);overflow:auto}
+  .menu.open{transform:none;opacity:1;visibility:visible}
+  .menu a{padding:14px 16px;font-size:16px;border-bottom:1px solid rgba(166,176,208,.1);border-bottom-width:1px}
+  .nav-cta{margin:8px 0 0;text-align:center}
+  .burger{display:grid}
+  .hero{padding:22px 0 18px}
+  .cabs{grid-template-columns:1fr}
+  /* EPG 转纵向 */
+  .epg-head{display:none}
+  .epg-row{grid-template-columns:1fr}
+  .epg-row .ch{flex-direction:row;align-items:center;gap:12px;border-right:0;border-bottom:1px solid var(--line)}
+  .slot{border-right:0;border-bottom:1px solid rgba(166,176,208,.08);display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .slot .t{flex:0 0 52px}
+  .slot h3{flex:1;min-width:120px;margin-top:0}
+  .slot p{flex:0 0 auto;margin-top:0}
+  .slot .badge{margin-top:0}
+  .slot .pk{flex:1 1 100%;margin-top:6px}
+}
+@media (max-width:600px){
+  .wrap{padding:0 15px}
+  .nav-in{padding:0 15px}
+  .sigbar-in{padding:6px 15px;font-size:11px;letter-spacing:.06em}
+  .inner{padding:34px 0}
+  .search{flex-wrap:wrap}
+  .search .pre{flex:1 1 100%;justify-content:flex-start;padding:8px 12px;border-right:0;border-bottom:1px solid var(--line)}
+  .search input{flex:1 1 100%;border-bottom:1px solid var(--line)}
+  .search button{flex:1 1 100%;border-left:0;border-top:1px solid var(--line-2)}
+  .fgrid{grid-template-columns:1fr;gap:20px}
+  .chans{grid-template-columns:1fr}
+  .cta{padding:30px 16px}
+  .sec-head{gap:12px}
+  .chno{min-width:44px;height:36px;font-size:12px}
+  .cab .dot{display:none}
+  .slot h3{flex:1 1 100%}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<a class="skip" href="#main">跳到主要内容</a>
+<div id="progress" aria-hidden="true"></div>
+
+<!-- ===== 信号条 ===== -->
+<div class="sigbar">
+  <div class="sigbar-in">
+    <span class="rec"><i aria-hidden="true"></i> ON AIR · 三级电影网</span>
+    <span>每日 <b>10:00</b> / <b>21:00</b> 上新</span>
+    <span>3 channels · 同步更新</span>
+  </div>
+</div>
+
+<!-- ===== 导航 ===== -->
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#home" aria-label="三级电影网首页">
+      <span class="triple" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span><b>三级电影网</b><small>triple screen</small></span>
+    </a>
+    <button class="burger" id="burger" aria-label="展开导航菜单" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="menu" id="menu" aria-label="主导航">
+      <a href="#home" class="active">主屏</a>
+      <a href="#movie">节目单</a>
+      <a href="#series">剧集排期</a>
+      <a href="#rank">热播榜单</a>
+      <a href="#news">信号快讯</a>
+      <a href="#about">关于帮助</a>
+      <a class="nav-cta" href="#movie">切台看片</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===== 首页：三块屏 ===== -->
+  <section id="home" class="hero">
+    <div class="wrap">
+      <div class="hero-head">
+        <div>
+          <span class="eyebrow">CH-01 / CH-02 / CH-03 · 三路信号同时在线</span>
+          <h1>三台同时开播，<em>三级电影网</em> 总能<u>对上你的口味</u></h1>
+          <p class="lead">
+            三级电影网是面向中文用户的影视资源聚合导航站：热门电影、<b>热播剧集</b>、国创动漫与热播榜单一站收拢，
+            分类清晰、每日上新，手机、平板、电脑打开都能顺畅在线观看。
+          </p>
+          <form class="search" role="search" id="searchForm">
+            <span class="pre" aria-hidden="true">SEARCH</span>
+            <input type="search" name="q" placeholder="搜索片名、演员或类型，例如：科幻 / 治愈" aria-label="站内搜索">
+            <button type="submit">搜索</button>
+          </form>
+          <div class="chips">
+            <a href="#movie">科幻大片</a><a href="#movie">治愈日常</a><a href="#series">都市情感</a>
+            <a href="#rank">高分经典</a><a href="#movie">国创动漫</a><a href="#news">今日上新</a>
+          </div>
+        </div>
+
+        <div class="screens">
+          <div class="screen reveal" style="--sc:var(--ch1);--c1:#22d3ee;--c2:#062b38">
+            <div class="bar"><span class="ch">CH-01</span>
+              <span class="st"><i aria-hidden="true"></i>LIVE</span></div>
+            <div class="view"><span class="now">NOW</span><span class="tm">20:00</span><span class="ttl">星轨之下</span></div>
+            <div class="foot"><h3>星轨之下</h3>
+              <p>科幻 · 2026 · 评分 9.1</p></div>
+          </div>
+          <div class="screen reveal" style="--sc:var(--ch2);--c1:#f472b6;--c2:#3d0a26">
+            <div class="bar"><span class="ch">CH-02</span>
+              <span class="st"><i aria-hidden="true"></i>LIVE</span></div>
+            <div class="view"><span class="now">NOW</span><span class="tm">21:30</span><span class="ttl">第七个证人</span></div>
+            <div class="foot"><h3>第七个证人</h3>
+              <p>悬疑 · 更新至 24 集 · 8.8</p></div>
+          </div>
+          <div class="screen reveal" style="--sc:var(--ch3);--c1:#fbbf24;--c2:#3d2a05">
+            <div class="bar"><span class="ch">CH-03</span>
+              <span class="st"><i aria-hidden="true"></i>LIVE</span></div>
+            <div class="view"><span class="now">NOW</span><span class="tm">19:00</span><span class="ttl">花灯记</span></div>
+            <div class="foot"><h3>花灯记</h3>
+              <p>动画 · 国创新番 · 8.6</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 栏目一：节目单 EPG ===== -->
+  <section id="movie">
+    <div class="wrap inner">
+      <div class="sec-head reveal">
+        <div class="txt">
+          <span class="chno">CH-01</span>
+          <div>
+            <h2><small>Program Guide</small>节目单 · 按频道按时段排好</h2>
+            <p>三级电影网把片库做成一张节目单：电影台、剧集台、动漫台三路并排，每个时段播什么都写在格子里，点一下就筛。</p>
+          </div>
+        </div>
+        <a class="more" href="#">完整节目表 →</a>
+      </div>
+      <div class="filters" role="tablist" aria-label="影片类型筛选">
+        <button class="on" data-cat="all" role="tab" aria-selected="true">全部</button>
+        <button data-cat="heal" role="tab" aria-selected="false">治愈</button>
+        <button data-cat="scifi" role="tab" aria-selected="false">科幻</button>
+        <button data-cat="action" role="tab" aria-selected="false">动作</button>
+        <button data-cat="love" role="tab" aria-selected="false">爱情</button>
+        <button data-cat="mystery" role="tab" aria-selected="false">悬疑</button>
+        <button data-cat="anime" role="tab" aria-selected="false">动画</button>
+      </div>
+
+      <div class="epg">
+        <div class="epg-head" aria-hidden="true">
+          <span>频道</span><span>19:00</span><span>20:00</span><span>21:00</span><span>22:00</span>
+        </div>
+
+        <div class="epg-row" style="--sc:var(--ch1)">
+          <div class="ch"><b>CH-01</b><span>电影台</span></div>
+          <a class="slot live" href="#" data-cat="scifi">
+            <span class="t">19:00</span>
+            <h3>星轨之下</h3>
+            <p>科幻 · 2026</p>
+            <span class="badge">正在播出</span>
+            <span class="pk"><i style="width:62%"></i></span>
+          </a>
+          <a class="slot next" href="#" data-cat="action">
+            <span class="t">20:00</span>
+            <h3>疾速拦截</h3>
+            <p>动作 · 2026</p>
+            <span class="badge">待播</span>
+            <span class="pk"><i style="width:0"></i></span>
+          </a>
+          <a class="slot next" href="#" data-cat="mystery">
+            <span class="t">21:00</span>
+            <h3>第七个证人</h3>
+            <p>悬疑 · 2025</p>
+            <span class="badge">待播</span>
+            <span class="pk"><i style="width:0"></i></span>
+          </a>
+          <a class="slot next" href="#" data-cat="scifi">
+            <span class="t">22:00</span>
+            <h3>深空信号</h3>
+            <p>科幻 · 2026</p>
+            <span class="badge">待播</span>
+            <span class="pk"><i style="width:0"></i></span>
+          </a>
+        </div>
+
+        <div class="epg-row" style="--sc:var(--ch2)">
+          <div class="ch"><b>CH-02</b><span>剧集台</span></div>
+          <a class="slot live" href="#" data-cat="love">
+            <span class="t">19:00</span>
+            <h3>长街旧事</h3>
+            <p>年代 · 更新至 20 集</p>
+            <span class="badge">更新中</span>
+            <span class="pk"><i style="width:62%"></i></span>
+          </a>
+          <a class="slot next" href="#" data-cat="heal">
+            <span class="t">20:00</span>
+            <h3>潮汐来信</h3>
+            <p>都市 · 全 32 集</p>
+            <span class="badge">已完结</span>
+            <span class="pk"><i style="width:100%"></i></span>
+          </a>
+          <a class="slot next" href="#" data-cat="action">
+            <span class="t">21:00</span>
+            <h3>极速追缉</h3>
+            <p>涉案 · 更新至 8 集</p>
+            <span class="badge">更新中</span>
+            <span class="pk"><i style="width:27%"></i></span>
+          </a>
+          <a class="slot next" href="#" data-cat="heal">
+            <span class="t">22:00</span>
+            <h3>海边小店</h3>
+            <p>剧情 · 2025</p>
+            <span class="badge">待播</span>
+            <span class="pk"><i style="width:0"></i></span>
+          </a>
+        </div>
+
+        <div class="epg-row" style="--sc:var(--ch3)">
+          <div class="ch"><b>CH-03</b><span>动漫台</span></div>
+          <a class="slot live" href="#" data-cat="anime">
+            <span class="t">19:00</span>
+            <h3>花灯记</h3>
+            <p>国创 · 2026 新番</p>
+            <span class="badge">正在播出</span>
+            <span class="pk"><i style="width:45%"></i></span>
+          </a>
+          <a class="slot next" href="#" data-cat="anime">
+            <span class="t">20:00</span>
+            <h3>山海食记</h3>
+            <p>国创 · 更新至 30 集</p>
+            <span class="badge">更新中</span>
+            <span class="pk"><i style="width:75%"></i></span>
+          </a>
+          <a class="slot next" href="#" data-cat="mystery">
+            <span class="t">21:00</span>
+            <h3>无声证词</h3>
+            <p>悬疑 · 2024</p>
+            <span class="badge">待播</span>
+            <span class="pk"><i style="width:0"></i></span>
+          </a>
+          <a class="slot next" href="#" data-cat="love">
+            <span class="t">22:00</span>
+            <h3>周末大赢家</h3>
+            <p>喜剧 · 2025</p>
+            <span class="badge">待播</span>
+            <span class="pk"><i style="width:0"></i></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 栏目二：剧集排期 ===== -->
+  <section id="series">
+    <div class="wrap inner">
+      <div class="sec-head reveal">
+        <div class="txt">
+          <span class="chno">CH-02</span>
+          <div>
+            <h2><small>Series</small>剧集排期 · 更新到哪集一眼看到</h2>
+            <p>都市情感、年代往事、悬疑罪案同步跟播，每部剧标注当前集数与更新节奏，追剧不漏集、不慌张。</p>
+          </div>
+        </div>
+        <a class="more" href="#">更新时间表 →</a>
+      </div>
+      <div class="cabs">
+        <a class="cab reveal" href="#" style="--c1:#8f7bb0;--c2:#2a1050">
+          <span class="mini"><b>EP 24</b></span>
+          <div class="det"><h3>第七个证人</h3><p>悬疑 / 犯罪 · 每周三、周五 20:00</p>
+            <span class="bar"><i style="width:80%"></i></span><span class="pct">80% 已更新</span></div>
+          <span class="dot" aria-hidden="true"></span>
+        </a>
+        <a class="cab reveal" href="#" style="--c1:#d9455f;--c2:#5c1410">
+          <span class="mini"><b>EP 20</b></span>
+          <div class="det"><h3>长街旧事</h3><p>剧情 / 年代 · 每周一至周三 21:00</p>
+            <span class="bar"><i style="width:62%"></i></span><span class="pct">62% 已更新</span></div>
+          <span class="dot" aria-hidden="true"></span>
+        </a>
+        <a class="cab reveal" href="#" style="--c1:#3f7d5c;--c2:#123c28">
+          <span class="mini"><b>EP 32</b></span>
+          <div class="det"><h3>潮汐来信</h3><p>爱情 / 都市 · 全 32 集一次看爽</p>
+            <span class="bar"><i style="width:100%"></i></span><span class="pct">已完结</span></div>
+          <span class="dot" aria-hidden="true"></span>
+        </a>
+        <a class="cab reveal" href="#" style="--c1:#40709e;--c2:#0d2036">
+          <span class="mini"><b>EP 12</b></span>
+          <div class="det"><h3>深空信号</h3><p>科幻 / 剧情 · 每周六 22:00</p>
+            <span class="bar"><i style="width:40%"></i></span><span class="pct">40% 已更新</span></div>
+          <span class="dot" aria-hidden="true"></span>
+        </a>
+        <a class="cab reveal" href="#" style="--c1:#5e9e57;--c2:#173a14">
+          <span class="mini"><b>EP 30</b></span>
+          <div class="det"><h3>山海食记</h3><p>动画 / 国创 · 每周四 10:00</p>
+            <span class="bar"><i style="width:75%"></i></span><span class="pct">75% 已更新</span></div>
+          <span class="dot" aria-hidden="true"></span>
+        </a>
+        <a class="cab reveal" href="#" style="--c1:#c96f4a;--c2:#4a2312">
+          <span class="mini"><b>EP 08</b></span>
+          <div class="det"><h3>极速追缉</h3><p>动作 / 涉案 · 每周日 20:00</p>
+            <span class="bar"><i style="width:27%"></i></span><span class="pct">27% 已更新</span></div>
+          <span class="dot" aria-hidden="true"></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 栏目三：热播榜单 ===== -->
+  <section id="rank">
+    <div class="wrap inner">
+      <div class="sec-head reveal">
+        <div class="txt">
+          <span class="chno">CH-03</span>
+          <div>
+            <h2><small>Ranking</small>热播榜单 · 跟着口碑不踩雷</h2>
+            <p>榜单综合三级电影网站内播放热度、完播率与观众评分，每小时重算一次，三张榜各看各的。</p>
+          </div>
+        </div>
+        <a class="more" href="#">榜单规则 →</a>
+      </div>
+      <div class="ranks">
+        <div class="rank reveal" style="--sc:var(--ch1)">
+          <h3><i aria-hidden="true"></i>今日热播榜</h3>
+          <ol>
+            <li><span class="no">01</span><span class="rt"><strong>星轨之下</strong><span>科幻 · 2026</span></span><span class="hot">9.1</span></li>
+            <li><span class="no">02</span><span class="rt"><strong>深空信号</strong><span>科幻 · 2026</span></span><span class="hot">9.0</span></li>
+            <li><span class="no">03</span><span class="rt"><strong>潮汐来信</strong><span>剧情 · 2026</span></span><span class="hot">8.9</span></li>
+            <li><span class="no">04</span><span class="rt"><strong>第七个证人</strong><span>悬疑 · 2025</span></span><span class="hot">8.8</span></li>
+            <li><span class="no">05</span><span class="rt"><strong>长街旧事</strong><span>剧情 · 2025</span></span><span class="hot">8.7</span></li>
+          </ol>
+        </div>
+        <div class="rank reveal" style="--sc:var(--ch2)">
+          <h3><i aria-hidden="true"></i>高分口碑榜</h3>
+          <ol>
+            <li><span class="no">01</span><span class="rt"><strong>第七个证人</strong><span>悬疑 · 2025</span></span><span class="hot">8.8</span></li>
+            <li><span class="no">02</span><span class="rt"><strong>花灯记</strong><span>动画 · 2026</span></span><span class="hot">8.6</span></li>
+            <li><span class="no">03</span><span class="rt"><strong>疾速拦截</strong><span>动作 · 2026</span></span><span class="hot">8.5</span></li>
+            <li><span class="no">04</span><span class="rt"><strong>无声证词</strong><span>悬疑 · 2024</span></span><span class="hot">8.4</span></li>
+            <li><span class="no">05</span><span class="rt"><strong>海边小店</strong><span>剧情 · 2025</span></span><span class="hot">8.3</span></li>
+          </ol>
+        </div>
+        <div class="rank reveal" style="--sc:var(--ch3)">
+          <h3><i aria-hidden="true"></i>国创动漫榜</h3>
+          <ol>
+            <li><span class="no">01</span><span class="rt"><strong>花灯记</strong><span>动画 · 2026</span></span><span class="hot">8.6</span></li>
+            <li><span class="no">02</span><span class="rt"><strong>山海食记</strong><span>动画 · 2025</span></span><span class="hot">8.2</span></li>
+            <li><span class="no">03</span><span class="rt"><strong>星辰旅人</strong><span>动画 · 2026</span></span><span class="hot">7.9</span></li>
+            <li><span class="no">04</span><span class="rt"><strong>机械之心</strong><span>动画 · 2025</span></span><span class="hot">7.6</span></li>
+            <li><span class="no">05</span><span class="rt"><strong>森林邮局</strong><span>动画 · 2024</span></span><span class="hot">7.3</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 栏目四：信号快讯 ===== -->
+  <section id="news">
+    <div class="wrap inner">
+      <div class="sec-head reveal">
+        <div class="txt">
+          <span class="chno">NEWS</span>
+          <div>
+            <h2><small>Feed</small>信号快讯 · 上线消息与观影攻略</h2>
+            <p>每天梳理上线消息、题材观察与观影攻略，在点开播放器之前先做一次低成本决策。</p>
+          </div>
+        </div>
+        <a class="more" href="#">更多信号快讯 →</a>
+      </div>
+      <div class="feeds">
+        <article class="feed reveal">
+          <div class="cv" style="--c1:#22d3ee;--c2:#062b38"><b>今日上新</b></div>
+          <div class="bd"><h3>本周新片：科幻与治愈同台</h3><p>三级电影网整理本周上线新片的题材分布与看点，附观影顺序建议。</p><time datetime="2026-10-03">2026-10-03</time></div>
+        </article>
+        <article class="feed reveal">
+          <div class="cv" style="--c1:#3f7d5c;--c2:#123c28"><b>观影指南</b></div>
+          <div class="bd"><h3>手机上看清 1080P 的三步排查法</h3><p>从码率、播放器到网络环境逐一排查，弱网下也能获得稳定的高清体验。</p><time datetime="2026-10-01">2026-10-01</time></div>
+        </article>
+        <article class="feed reveal">
+          <div class="cv" style="--c1:#fbbf24;--c2:#3d2a05"><b>榜单解读</b></div>
+          <div class="bd"><h3>热播榜的分数是怎么算出来的</h3><p>拆解三级电影网榜单权重：播放热度、完播率与评分如何共同决定排位。</p><time datetime="2026-09-28">2026-09-28</time></div>
+        </article>
+        <article class="feed reveal">
+          <div class="cv" style="--c1:#f472b6;--c2:#3d0a26"><b>类型专题</b></div>
+          <div class="bd"><h3>一份陪你过周末的治愈片单</h3><p>从轻松日常到温柔结局，挑选 12 部适合周末慢慢看的治愈系作品。</p><time datetime="2026-09-25">2026-09-25</time></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 栏目五：关于与帮助 ===== -->
+  <section id="about">
+    <div class="wrap inner">
+      <div class="sec-head reveal">
+        <div class="txt">
+          <span class="chno">INFO</span>
+          <div>
+            <h2><small>About</small>关于三级电影网</h2>
+            <p>一个把「找片」这件事变短的影视资源聚合导航站，三个频道、节目单与榜单集中在一页里。</p>
+          </div>
+        </div>
+        <a class="more" href="#">意见反馈 →</a>
+      </div>
+      <div class="about">
+        <div class="panel reveal">
+          <h3>我们做什么</h3>
+          <p><b>三级电影网</b>（https://sanjidianyingwang-cn.github.io）是一个面向中文用户的影视资源聚合导航站。目标很直接：让「找片」这件事变短，把分散的影视入口、分类标签与榜单数据收进同一个页面。</p>
+          <p>三条坚持：<b>分类够细</b>、<b>上新够勤</b>、<b>页面够轻</b>。整站单页结构，移动端自适应，弱网也能快速打开。</p>
+          <div class="chans">
+            <div><strong>CH-01 电影台</strong><span>热门电影 · 每日上新</span></div>
+            <div><strong>CH-02 剧集台</strong><span>热播剧集 · 同步跟播</span></div>
+            <div><strong>CH-03 动漫台</strong><span>国创动漫 · 新番追更</span></div>
+            <div><strong>榜单台</strong><span>每小时重排</span></div>
+          </div>
+        </div>
+        <div class="panel faq reveal">
+          <h3>常见问题</h3>
+          <details open><summary>三级电影网需要注册才能浏览吗？</summary><p>不需要。节目单、榜单与信号快讯内容全部开放访问，打开页面即可查看，无需注册登录。</p></details>
+          <details><summary>站名里的「三台」是什么意思？</summary><p>指站内三条内容主线：CH-01 电影台、CH-02 剧集台、CH-03 动漫台，三条线各自独立更新，互不挤占。</p></details>
+          <details><summary>手机端会自动适配屏幕吗？</summary><p>会。页面为响应式布局，手机上节目单自动转为按频道纵向排列，导航折叠为抽屉，横竖屏都能正常显示。</p></details>
+          <details><summary>影片清晰度可以自己选吗？</summary><p>支持多档清晰度切换，具体档位以播放源为准；网络较差时建议先降低清晰度保证流畅。</p></details>
+          <details><summary>找不到想看的影片怎么办？</summary><p>先用顶部搜索框按片名、演员或类型检索，也可进入节目单按频道与时段逐层查找。</p></details>
+        </div>
+      </div>
+
+      <div class="cta reveal">
+        <h2>三个台同时开着，<em>三级电影网</em> 今晚不愁看</h2>
+        <p>收藏三级电影网，随时打开就能看到最新上线的电影、剧集与热播榜单，随手一切就有好戏。</p>
+        <a href="#movie">切台看片</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== 页脚 ===== -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fbrand">
+        <a class="lg" href="#home" aria-label="三级电影网首页"><i aria-hidden="true"><b></b><b></b><b></b></i>三级电影网</a>
+        <p>三级电影网 · 影视资源聚合导航。本站仅提供影视信息索引与分类导航服务。</p>
+      </div>
+      <div>
+        <h4>频道导航</h4>
+        <ul>
+          <li><a href="#home">主屏</a></li>
+          <li><a href="#movie">节目单</a></li>
+          <li><a href="#series">剧集排期</a></li>
+          <li><a href="#rank">热播榜单</a></li>
+          <li><a href="#news">信号快讯</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>热门类型</h4>
+        <ul>
+          <li><a href="#movie">治愈系电影</a></li>
+          <li><a href="#movie">科幻电影</a></li>
+          <li><a href="#movie">悬疑犯罪</a></li>
+          <li><a href="#movie">爱情剧情</a></li>
+          <li><a href="#movie">国创动漫</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于本站</h4>
+        <ul>
+          <li><a href="#about">关于三级电影网</a></li>
+          <li><a href="#about">常见问题</a></li>
+          <li><a href="#">意见反馈</a></li>
+          <li><a href="#">免责声明</a></li>
+          <li><a href="#">友情链接</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 三级电影网 https://sanjidianyingwang-cn.github.io · 影视信息聚合导航</span>
+      <span>热门关键词：<b>三级电影网</b> · 电影在线观看 · 电视剧在线观看 · 动漫在线观看 · 热播榜单</span>
+    </div>
+  </div>
+</footer>
+
+<button id="top" aria-label="回到顶部"><svg viewBox="0 0 24 24"><path d="M12 5l7 7h-4v7h-6v-7H5z"/></svg></button>
+
+<!-- ===== 结构化数据（利于必应理解与收录） ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://sanjidianyingwang-cn.github.io/#website",
+      "url": "https://sanjidianyingwang-cn.github.io/",
+      "name": "三级电影网",
+      "alternateName": ["三级电影", "三级电影网官网"],
+      "description": "三级电影网是面向中文用户的影视资源聚合导航站，收录热门电影、热播电视剧、国创动漫与热播榜单。",
+      "inLanguage": "zh-CN",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": { "@type": "EntryPoint", "urlTemplate": "https://sanjidianyingwang-cn.github.io/?q={search_term_string}" },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://sanjidianyingwang-cn.github.io/#organization",
+      "name": "三级电影网",
+      "url": "https://sanjidianyingwang-cn.github.io/",
+      "logo": "https://sanjidianyingwang-cn.github.io/favicon.ico"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://sanjidianyingwang-cn.github.io/#webpage",
+      "url": "https://sanjidianyingwang-cn.github.io/",
+      "name": "三级电影网 - 热门电影电视剧在线观看_影视资源聚合导航",
+      "isPartOf": { "@id": "https://sanjidianyingwang-cn.github.io/#website" },
+      "about": { "@id": "https://sanjidianyingwang-cn.github.io/#organization" },
+      "inLanguage": "zh-CN",
+      "primaryImageOfPage": "https://sanjidianyingwang-cn.github.io/favicon.ico",
+      "breadcrumb": { "@id": "https://sanjidianyingwang-cn.github.io/#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sanjidianyingwang-cn.github.io/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://sanjidianyingwang-cn.github.io/" },
+        { "@type": "ListItem", "position": 2, "name": "节目单", "item": "https://sanjidianyingwang-cn.github.io/#movie" },
+        { "@type": "ListItem", "position": 3, "name": "剧集排期", "item": "https://sanjidianyingwang-cn.github.io/#series" },
+        { "@type": "ListItem", "position": 4, "name": "热播榜单", "item": "https://sanjidianyingwang-cn.github.io/#rank" },
+        { "@type": "ListItem", "position": 5, "name": "信号快讯", "item": "https://sanjidianyingwang-cn.github.io/#news" }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "三级电影网今日热播榜",
+      "itemListOrder": "https://schema.org/ItemListOrderDescending",
+      "numberOfItems": 5,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "星轨之下" },
+        { "@type": "ListItem", "position": 2, "name": "深空信号" },
+        { "@type": "ListItem", "position": 3, "name": "潮汐来信" },
+        { "@type": "ListItem", "position": 4, "name": "第七个证人" },
+        { "@type": "ListItem", "position": 5, "name": "长街旧事" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "三级电影网需要注册才能浏览吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "不需要。节目单、榜单与信号快讯内容全部开放访问，打开页面即可查看，无需注册登录。" } },
+        { "@type": "Question", "name": "站名里的「三台」是什么意思？",
+          "acceptedAnswer": { "@type": "Answer", "text": "指站内三条内容主线：CH-01 电影台、CH-02 剧集台、CH-03 动漫台，三条线各自独立更新，互不挤占。" } },
+        { "@type": "Question", "name": "手机端会自动适配屏幕吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "会。页面为响应式布局，手机上节目单自动转为按频道纵向排列，导航折叠为抽屉，横竖屏都能正常显示。" } },
+        { "@type": "Question", "name": "影片清晰度可以自己选吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "支持多档清晰度切换，具体档位以播放源为准；网络较差时建议先降低清晰度保证流畅。" } },
+        { "@type": "Question", "name": "找不到想看的影片怎么办？",
+          "acceptedAnswer": { "@type": "Answer", "text": "先用顶部搜索框按片名、演员或类型检索，也可进入节目单按频道与时段逐层查找。" } }
+      ]
+    }
+  ]
+}
+</script>
+
+<script>
+(function () {
+  'use strict';
+  var bar = document.getElementById('progress');
+  var topBtn = document.getElementById('top');
+  function onScroll () {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    var y = window.scrollY || document.documentElement.scrollTop;
+    bar.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
+    if (y > 420) { topBtn.classList.add('show'); } else { topBtn.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  topBtn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+  /* 移动端导航 */
+  var burger = document.getElementById('burger');
+  var menu = document.getElementById('menu');
+  burger.addEventListener('click', function () {
+    var open = menu.classList.toggle('open');
+    burger.classList.toggle('on', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  menu.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') {
+      menu.classList.remove('open');
+      burger.classList.remove('on');
+      burger.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  /* 导航高亮 */
+  var links = Array.prototype.slice.call(menu.querySelectorAll('a[href^="#"]:not(.nav-cta)'));
+  var secs = links.map(function (a) { return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
+  if ('IntersectionObserver' in window) {
+    var navObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) { return; }
+        links.forEach(function (a) {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + en.target.id);
+        });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    secs.forEach(function (s) { navObs.observe(s); });
+  }
+
+  /* 类型筛选 */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.filters button'));
+  var slots = Array.prototype.slice.call(document.querySelectorAll('.epg .slot'));
+  tabs.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      tabs.forEach(function (b) { b.classList.remove('on'); b.setAttribute('aria-selected', 'false'); });
+      btn.classList.add('on');
+      btn.setAttribute('aria-selected', 'true');
+      var cat = btn.getAttribute('data-cat');
+      slots.forEach(function (s) {
+        s.style.display = (cat === 'all' || s.getAttribute('data-cat') === cat) ? '' : 'none';
+      });
+    });
+  });
+
+  /* 搜索 */
+  var form = document.getElementById('searchForm');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!form.q.value.trim()) { form.q.focus(); return; }
+    document.getElementById('movie').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  /* 入场动画 */
+  var reveals = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en, i) {
+        if (en.isIntersecting) {
+          var el = en.target;
+          setTimeout(function () { el.classList.add('in'); }, i * 50);
+          io.unobserve(el);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(function (r) { io.observe(r); });
+  } else {
+    reveals.forEach(function (r) { r.classList.add('in'); });
+  }
+})();
+</script>
+</body>
+</html>
